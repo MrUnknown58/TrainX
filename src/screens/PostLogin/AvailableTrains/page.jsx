@@ -1,22 +1,82 @@
-import React from 'react'
-import { Box, Typography } from '@mui/material';
-import TrainDetails from './components/TrainDetails';
-
-
+import React from "react";
+import { Box } from "@mui/material";
+import TrainDetails from "./components/TrainDetails";
+import { useSelector } from "react-redux";
 
 const AvailableTrains = () => {
-  return ( 
-    <>
-    {/* <Navbar/> */}
-    <Box display={'flex'} flexDirection={'column'}  gap={2} alignItems={'end'} bgcolor={'whitesmoke'}paddingY={5} paddingX={5} sx={{overflowY:'auto'}}>
-    <TrainDetails name= {'12045 Darjeeling Express'} arrival={'12:45 am'} dept={'12:45 pm'}/>
-  <TrainDetails name= {'12049 Jalpaiguri Express'} arrival={'13:45 am'} dept={'5:45 pm'}/>
-  <TrainDetails name= {'12050 Siliguri Express'} arrival={'13:45 am'} dept={'5:45 pm'}/>
-  <TrainDetails name= {'12052 Guda Express'} arrival={'13:45 am'} dept={'10:45 pm'}/>
-  <TrainDetails name= {'12069 Dwiti Express'} arrival={'13:45 pm'} dept={'5:45 am'}/>
-  </Box>
-  </>
-  )
-}
+  const trainDetails = [
+    {
+      name: "12045 Darjeeling Express",
+      arrival: "12:45 am",
+      dept: "12:45 pm",
+      seats: {
+        sl: 24,
+        ac3: 12,
+        ac2: 32,
+        ac1: 44,
+      },
+    },
+    {
+      name: "12049 Jalpaiguri Express",
+      arrival: "12:45 am",
+      dept: "12:45 pm",
+      seats: {
+        sl: 24,
+        ac3: 12,
+        ac2: 32,
+        ac1: 44,
+      },
+    },
+    {
+      name: "12050 Siliguri Express",
+      arrival: "12:45 am",
+      dept: "12:45 pm",
+      seats: {
+        sl: 24,
+        ac3: 12,
+        ac2: 32,
+        ac1: 44,
+      },
+    },
+    {
+      name: "12052 Guda Express",
+      arrival: "12:45 am",
+      dept: "12:45 pm",
+      seats: {
+        sl: 24,
+        ac3: 12,
+        ac2: 32,
+        ac1: 44,
+      },
+    },
+    {
+      name: "12069 Dwiti Express",
+      arrival: "12:45 am",
+      dept: "12:45 pm",
+      seats: {
+        sl: 24,
+        ac3: 12,
+        ac2: 32,
+        ac1: 44,
+      },
+    },
+  ];
+  return (
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={2}
+      alignItems={"end"}
+      paddingY={5}
+      paddingX={5}
+      bgcolor={"whitesmoke"}
+      sx={{ overflowY: "auto", height: "100%" }}
+    >
+      {trainDetails?.map((details, index) => (
+        <TrainDetails key={index} details={details} />
+      ))}
+    </Box>
+  );
+};
 
-export default AvailableTrains
+export default AvailableTrains;
