@@ -11,9 +11,9 @@ const Tier = () => {
       display: "flex",
       gap: "10px"
      }}>
-      <Class/>
-     <Class/>
-     <Class/>
+      <Class tier={'SL'} seats={105} bgcolor={"greenYellow"} />
+     <Class tier={'3AC'} seats={30} bgcolor={"pink"}/>
+     <Class tier={'2AC'} seats={10} bgcolor={"tan"}/>
     </CardContent>
     <CardActions>
     </CardActions>
