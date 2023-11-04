@@ -1,13 +1,16 @@
-import { Button } from "@mui/material";
-import React from "react";
+
+import React, { Fragment } from "react";
+import Home from "./components/Home";
+
 
 
 const Dashboard = () => {
-  return <div>
- <Button variant="contained" color="success" sx={{marginY:20}}>
-  Success
-</Button>
-  </div>;
+  return (
+    <Fragment>
+      <Home/>
+    </Fragment>
+    
+  );
 };
 
 export default Dashboard;
