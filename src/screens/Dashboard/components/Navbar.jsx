@@ -1,30 +1,3 @@
-// import React from 'react';
-// import Logo from "../../../assets/logo-no-background.svg";
-// import "./Navbar.css";
-
-// const Navbar = () => {
-//   return (
-    
-//       <nav className='nav'>
-//       <a href="/"className='logo'>
-//       <span>TrainX</span>
-//       {/* <img src={Logo} alt="" /> */}
-//       </a>
-//       <ul>
-//         <li>
-//           <a href="/Bookings">My Bookings</a>
-//         </li>
-//         <li>
-//           <a href="/about">About</a>
-//         </li>
-//       </ul>
-
-//       </nav>
-    
-//   )
-// }
-
-// export default Navbar
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -38,8 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import Logo from "../../../assets/logo-no-background.svg";
 
 const pages = ['My Bookings', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -64,30 +35,27 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" style={{background:"black"}}>
+    <AppBar position="static" style={{background:"white"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <img src={Logo} alt="" style={{ width: '100px', height: 'auto', marginRight: '20px' }} />
-
-
-          {/* <Typography
-            variant="h6"
+          {/* <img src={Logo} alt="" style={{ width: '100px', height: 'auto', marginRight: '20px' }} /> */}
+          <Typography
+            variant="h5"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              letterSpacing: '.2rem',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
-            TrainX
-          </Typography> */}
+            Train<span className='text-[#0578FF] italic'>X</span>
+          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -126,7 +94,7 @@ function Navbar() {
             </Menu>
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -138,12 +106,12 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button

@@ -3,17 +3,17 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import React from "react";
 
 const Footer = () => {
-  return ( <footer className="bg-[#0578FF]">
-  <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 text-white">
-    <div className="lg:flex lg:items-start lg:gap-8">
-      <div className="text-3xl text-black flex">
-       <span className="text-white">Train</span> <span className="italic">X</span>
+  return ( <footer className="bg-white">
+  <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8 text-gray-600">
+    <div className="lg:flex lg:items-start lg:gap-6">
+      <div className="text-2xl text-black flex">
+       <span className="text-black font-bold">Train</span> <span className="italic text-[#0578FF] font-bold">X</span>
       </div>
 
       <div
-        className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16"
+        className="mt-8 grid grid-cols-2 gap-10 place-items-center lg:mt-0 lg:grid-cols-5 lg:gap-y-16"
       >
-        <div className="col-span-2">
+        <div className="col-span-2 sm:col-span-2">
           <div>
             <h2 className="text-2xl font-bold">
             Planning your next trip ?
@@ -22,9 +22,10 @@ const Footer = () => {
             Subscribe to our newsletter to get latest travel trends & deals
             </p>
           </div>
+          
         </div>
-  <div className=" w-full text-black flex items-center">  <input className=" focus:outline-none bg-transparent border-none" type="text" placeholder="Email"/>
-  <ArrowOutwardIcon sx={{color: 'white'}}/>
+  <div className=" w-full text-black flex items-center lg:col-span-1">  <input className=" focus:outline-none bg-transparent border-none" type="text" placeholder="Email"/>
+  <ArrowOutwardIcon/>
   </div>
         {/* <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
           <form className="w-full">

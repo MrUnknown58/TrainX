@@ -3,16 +3,16 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 
 
-const Class = () => {
+const Class = ({tier,seats,bgcolor}) => {
   return (
-    <Box sx={{backgroundColor : "greenyellow", width: "6rem", height: "fit-content"  , borderRadius: "10px", padding : "2vh"}}>
+    <Box sx={{backgroundColor : bgcolor, width: "6rem", height: "fit-content"  , borderRadius: "10px", padding : "2vh"}}>
     <Typography sx={{ fontSize: 14 
   }} color="text.secondary" gutterBottom
     >
-     SL
+     {tier}
     </Typography>
     <Typography variant="h7" component="div">
-      105 seats
+      {seats} seats
     </Typography>
     <Typography variant="h8" component="div">
       Available

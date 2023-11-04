@@ -4,9 +4,11 @@ import Contact from "./screens/PostLogin/Contact/page";
 import Dashboard from "./screens/Dashboard/page";
 import Footer from "./screens/components/Footer";
 import AvailableTrains from "./screens/PostLogin/AvailableTrains/page";
+import Navbar from "./screens/components//Navbar"
 function App() {
   return (
     <>
+      <Navbar/>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/home" element={<Home />} />

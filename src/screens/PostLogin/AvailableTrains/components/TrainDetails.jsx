@@ -5,18 +5,18 @@ import Typography from '@mui/material/Typography';
 import Tier from './Tier';
 
 
-const TrainDetails = ({name, arrival , dept}) => {
+const TrainDetails = ({name,arrival,dept}) => {
   return (
     <Card sx={{ minWidth: 600 }}>
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
-        12045 - Darjeeling Express
+        {name}
       </Typography>
       <Typography variant="body2" color="text.secondary" display={'flex'} alignItems={'center'}>
-      10:30  <hr className='flex-grow border-t border-gray-300'/> 12:30
+      {dept}  <hr className='flex-grow border-t border-gray-300'/> {arrival}
       </Typography>
     </CardContent>
-    <Tier/>
+    <Tier />
   </Card>
   )
 }

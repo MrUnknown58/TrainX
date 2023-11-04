@@ -53,12 +53,13 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1580442374555-3def8fb41738?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cmFpbHxlbnwwfHwwfHx8MA%3D%3D)',
-            objectFit:'cover',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1560521608-b4e1acca0824?auto=format&fit=crop&q=80&w=1376&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+            // objectFit:'contain',
+            // backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
           }}
         />
@@ -90,10 +91,11 @@ export default function SignInSide() {
     my: 5,
   }}
 >
-  <Button variant="contained" color="primary" sx={{ mb: 2 }}>
+  <div className='bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600'>Hey Travellers</div>
+  {/* <Button variant="contained" color="primary" sx={{ mb: 2 }}>
     Hey, Travellers!
-  </Button>
-  <Typography variant="h5" sx={{ fontWeight: 'light' }}>
+  </Button> */}
+  <Typography variant="h5" sx={{ fontWeight: 'semi-bold' }}>
     made your bookings experience easy !!
   </Typography>
 </Box>
