@@ -79,6 +79,7 @@ export default function SignInSide() {
               <span className="italic">X</span>
             </div>
           </Typography>
+          {/* <img src={Logo} alt="" style={{ width: '200px', height: 'auto',marginBottom:'60px'}} /> */}
           <Box
             sx={{
               display: "flex",
@@ -88,14 +89,16 @@ export default function SignInSide() {
               my: 5,
             }}
           >
-            <Button variant="contained" color="primary" sx={{ mb: 2 }}>
-              Hey, Travellers!
-            </Button>
-            <Typography variant="h5" sx={{ fontWeight: "light" }}>
+            <div className="bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600">
+              Hey Travellers
+            </div>
+            {/* <Button variant="contained" color="primary" sx={{ mb: 2 }}>
+    Hey, Travellers!
+  </Button> */}
+            <Typography variant="h5" sx={{ fontWeight: "semi-bold" }}>
               made your bookings experience easy !!
             </Typography>
           </Box>
-
           <Box
             component="form"
             noValidate

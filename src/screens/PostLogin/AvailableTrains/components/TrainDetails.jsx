@@ -21,7 +21,7 @@ const TrainDetails = ({ details }) => {
           <hr className="flex-grow border-t border-gray-300" /> {details?.dept}
         </Typography>
       </CardContent>
-      <Tier />
+      <Tier seats={details?.seats} />
     </Card>
   );
 };
