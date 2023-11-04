@@ -75,12 +75,31 @@ export default function SignInSide() {
     {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
       <LockOutlinedIcon />
     </Avatar> */}
-    {/* <Typography component="h1" variant="h5">
-      TrainX
-    </Typography> */}
-    <img src={Logo} alt="" style={{ width: '200px', height: 'auto',marginBottom:'60px'}} />
+    <Typography component="h1" variant="h5">
+    <div className="text-3xl text-[#0578FF]  flex">
+       <span className="text-black">Train</span> <span className="italic">X</span>
+      </div>
+    </Typography>
+    {/* <img src={Logo} alt="" style={{ width: '200px', height: 'auto',marginBottom:'60px'}} /> */}
+    <Box
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    my: 5,
+  }}
+>
+  <Button variant="contained" color="primary" sx={{ mb: 2 }}>
+    Hey, Travellers!
+  </Button>
+  <Typography variant="h5" sx={{ fontWeight: 'light' }}>
+    made your bookings experience easy !!
+  </Typography>
+</Box>
 
-    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+
+  <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
   <Box sx={{ display: 'flex', gap: 2 }}>
     <TextField
       margin="normal"
