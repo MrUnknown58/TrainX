@@ -61,6 +61,8 @@ const AvailableTrains = () => {
       },
     },
   ];
+  const { stations } = useSelector((state) => state.stationInfo);
+  console.log(stations);
   return (
     <Box
       display={"flex"}

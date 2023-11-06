@@ -9,12 +9,21 @@ import {
 
 const debugMode = true;
 
-async function callAPI({ payload, dispatch, method, url, dataAction }) {
+async function callAPI({
+  payload,
+  headers = "",
+  dispatch,
+  method,
+  url,
+  dataAction,
+}) {
   console.log("URL: " + url);
   var response;
   try {
     const config = {
       method: method,
+      headers: headers,
+
       // url: process.env.REACT_APP_BASE_URL + apiEndpoint,
       url: url,
       data: payload,
