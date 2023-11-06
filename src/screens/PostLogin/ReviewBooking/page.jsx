@@ -7,11 +7,12 @@ import Typography from "@mui/material/Typography";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { CenterFocusStrong } from '@mui/icons-material';
 
 const ReviewBooking = () => {
   return (
     <>
-    <h2 className="text-3xl text-[#0578FF] font-bold bg-[whitesmoke] px-12 py-6">Review your booking</h2>
+    <h2 className="text-3xl text-[#0578FF] font-bold bg-[whitesmoke] px-12 py-4">Review your booking</h2>
     <Box display={'flex'} justifyContent={'space-between'}    paddingY={5}
       paddingX={5}
       bgcolor={"whitesmoke"}>
@@ -56,7 +57,7 @@ const ReviewBooking = () => {
       </div>
       <div className=' flex flex-col'>
       <TextField id="standard-basic" label="Enter IRCTC user id" variant="standard" sx={{width:'100%', paddingBottom: '2vh'}} />
-      <button className='px-8 py-2 rounded-2xl bg-[#0578FF] text-white'>verify</button>
+      <Button variant="contained" fullWidth >verfiy</Button>
       <div className='pt-4'>
       <Button variant="text">Create IRCTC Id</Button>
       <Button variant="text">Forget Id ?</Button>
@@ -84,12 +85,45 @@ const ReviewBooking = () => {
       alignItems={"end"}
       sx={{ overflowY: "auto", height: "100%" }}
     >
-     <TrainSelected name={"Delhi-Bangalore Rajdhani"}   arrival={"12:45 am"}
+      <div className='flex flex-col gap-10'>
+      <TrainSelected name={"Delhi-Bangalore Rajdhani"}   arrival={"12:45 am"}
       dept={"12:45 pm"}
       source = {"New Delhi"}
       destination = {"Bangalore"}/>
-    </Box>
-    </Box>
+      </div>
+   
+<Card sx={{ minWidth: 500, minHeight: 100 }}>
+      <CardContent>
+        <h4 className='font-semibold text-xl'>Bill Details</h4>
+         <div  className='flex '>
+            <div  className='flex  items-start flex-col justify-between '>
+              <h5>Base Ticket Fare</h5>
+              <h5>Total Travellers</h5>
+              <h5>CGST & SGST</h5>
+              </div>
+              <div className='flex justify-between items-end flex-col'>
+              <h5>Rs. 2000</h5>
+              <h5>1</h5>
+              <h5>Rs.360</h5>
+            </div>
+            </div>
+         <div className='flex justify-between items-center'>
+         <h4 className='font-semibold text-xl'>Total Charge</h4>
+          <h4>2360</h4>
+         </div>
+      </CardContent>
+    </Card>
+    <div className='w-full pb-1'>
+
+    <Button variant="contained" fullWidth >Book Now</Button>
+    </div>
+    <div className='w-full text-center'>
+    <Button variant="text" color='error'>Cancel</Button>
+    </div>
+      </Box>
+
+
+      </Box>
     </>
   )
 }
