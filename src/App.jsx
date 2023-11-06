@@ -6,6 +6,7 @@ import Footer from "./screens/components/Footer";
 import AvailableTrains from "./screens/PostLogin/AvailableTrains/page";
 import Navbar from "./screens/components//Navbar";
 import ReviewBooking from "./screens/PostLogin/ReviewBooking/page";
+import PaymentPortal from "./screens/PostLogin/PaymentPortal/page";
 function App() {
   const navigate = useNavigate();
   const loc = useLocation();
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/availableTrains" element={<AvailableTrains />} />
         <Route exact path="/reviewBooking" element={<ReviewBooking />} />
+        <Route exact path="/paymentPortal" element={<PaymentPortal />} />
       </Routes>
       {loc.pathname !== "/" && <Footer />}
     </>
