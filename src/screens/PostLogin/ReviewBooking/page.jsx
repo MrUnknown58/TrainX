@@ -3,13 +3,28 @@ import { Box, Button, TextField } from "@mui/material";
 import TrainSelected from './components/BoardingDetails';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { CenterFocusStrong } from '@mui/icons-material';
+
+import { Link } from 'react-router-dom';
+import Bill from './components/BilDetails';
 
 const ReviewBooking = () => {
+  const details = [
+    {
+      name: "Base Ticket Fare",
+      price: "Rs. 3000",
+    },
+    {
+      name: "Total Travellers",
+      price: "4",
+    },
+    {
+      name: "CGST & SGST",
+      price: "Rs. 500",
+    },
+  ];
   return (
     <>
     <h2 className="text-3xl text-[#0578FF] font-bold bg-[whitesmoke] px-12 py-4">Review your booking</h2>
@@ -78,51 +93,34 @@ const ReviewBooking = () => {
       </CardContent>
     </Card>
     </Box>
-          <Box
-      display={"flex"}
-      flexDirection={"column"}
-      gap={2}
-      alignItems={"end"}
-      sx={{ overflowY: "auto", height: "100%" }}
-    >
-      <div className='flex flex-col gap-10'>
-      <TrainSelected name={"Delhi-Bangalore Rajdhani"}   arrival={"12:45 am"}
-      dept={"12:45 pm"}
-      source = {"New Delhi"}
-      destination = {"Bangalore"}/>
-      </div>
-   
-<Card sx={{ minWidth: 500, minHeight: 100 }}>
-      <CardContent>
-        <h4 className='font-semibold text-xl'>Bill Details</h4>
-         <div  className='flex '>
-            <div  className='flex  items-start flex-col justify-between '>
-              <h5>Base Ticket Fare</h5>
-              <h5>Total Travellers</h5>
-              <h5>CGST & SGST</h5>
-              </div>
-              <div className='flex justify-between items-end flex-col'>
-              <h5>Rs. 2000</h5>
-              <h5>1</h5>
-              <h5>Rs.360</h5>
-            </div>
-            </div>
-         <div className='flex justify-between items-center'>
-         <h4 className='font-semibold text-xl'>Total Charge</h4>
-          <h4>2360</h4>
-         </div>
-      </CardContent>
-    </Card>
-    <div className='w-full pb-1'>
+    <Box
+          display={"flex"}
+          flexDirection={"column"}
+        >
+          <Card
+            sx={{
+              marginBottom: 10,
+              background: "rgba(5, 120, 255, 0.1)",
+              width: "100%",
+              paddingX: 3,
+              paddingY: 2,
+              minWidth: 500, minHeight: 100
+            }}
+            className="space-y-[55px]"
+          >
+            <TrainSelected/>
+            </Card>
 
+            <Bill details={details} total={"Rs.3500"} />
+    <div className='w-full pb-1'>
+      <Link to={'/paymentportal'}>
     <Button variant="contained" fullWidth >Book Now</Button>
+    </Link>
     </div>
     <div className='w-full text-center'>
     <Button variant="text" color='error'>Cancel</Button>
     </div>
       </Box>
-
-
       </Box>
     </>
   )
