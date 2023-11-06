@@ -7,6 +7,8 @@ import AvailableTrains from "./screens/PostLogin/AvailableTrains/page";
 import Navbar from "./screens/components//Navbar";
 import ReviewBooking from "./screens/PostLogin/ReviewBooking/page";
 import PaymentPortal from "./screens/PostLogin/PaymentPortal/page";
+import FinalBill from "./screens/PostLogin/PaymentConfirmation/components/FinalBill";
+import PaymentConfirmation from "./screens/PostLogin/PaymentConfirmation/page";
 function App() {
   const navigate = useNavigate();
   const loc = useLocation();
@@ -20,6 +22,7 @@ function App() {
         <Route exact path="/availableTrains" element={<AvailableTrains />} />
         <Route exact path="/reviewBooking" element={<ReviewBooking />} />
         <Route exact path="/paymentPortal" element={<PaymentPortal />} />
+        <Route exact path="/finalBill" element={<PaymentConfirmation/>} />
       </Routes>
       {loc.pathname !== "/" && <Footer />}
     </>
