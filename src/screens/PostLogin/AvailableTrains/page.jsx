@@ -72,6 +72,8 @@ const AvailableTrains = () => {
       },
     },
   ];
+  const { stations } = useSelector((state) => state.stationInfo);
+  console.log(stations);
   return (
     <>
     <Box display={'flex'} justifyContent={'space-between'}    paddingY={5}
