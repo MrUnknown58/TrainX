@@ -3,77 +3,80 @@ import { Box, Button, TextField } from "@mui/material";
 import TrainDetails from "./components/TrainDetails";
 import { useSelector } from "react-redux";
 import TuneIcon from '@mui/icons-material/Tune';
+import data from "../../../../trainInfo.json";
 
 const AvailableTrains = () => {
-  const trainDetails = [
-    {
-      name: "12045 Darjeeling Express",
-      source: "Kolkata",
-      destination: "Jalpaiguri",
-      arrival: "12:45 am",
-      dept: "12:45 pm",
-      seats: {
-        sl: 24,
-        ac3: 12,
-        ac2: 32,
-        ac1: 44,
-      },
-    },
-    {
-      name: "12049 Jalpaiguri Express",
-      source: "Kolkata",
-      destination: "Jalpaiguri",
-      arrival: "12:45 am",
-      dept: "12:45 pm",
-      seats: {
-        sl: 24,
-        ac3: 12,
-        ac2: 32,
-        ac1: 4,
-      },
-    },
-    {
-      name: "12050 Siliguri Express",
-      source : "Kolkata",
-      destination: "Siliguri",
-      arrival: "12:45 am",
-      dept: "12:45 pm",
-      seats: {
-        sl: 240,
-        ac3: 12,
-        ac2: 32,
-        ac1: 44,
-      },
-    },
-    {
-      arrival: "12:45 am",
-      dept: "12:45 pm",
-      name: "Chennai-Kolkata Superfast",
-      source: "Chennai",
-      destination: "Kolkata",
-      seats: {
-        sl: 24,
-        ac3: 120,
-        ac2: 32,
-        ac1: 44,
-      },
-    },
-    {
-      name: "Delhi-Bangalore Rajdhani",
-      arrival: "12:45 am",
-      dept: "12:45 pm",
-      source: "New Delhi",
-      destination: "Bangalore",
-      seats: {
-        sl: 240,
-        ac3: 102,
-        ac2: 32,
-        ac1: 44,
-      },
-    },
-  ];
+  // const trainDetails = [
+  //   {
+  //     name: "12045 Darjeeling Express",
+  //     source: "Kolkata",
+  //     destination: "Jalpaiguri",
+  //     arrival: "12:45 am",
+  //     dept: "12:45 pm",
+  //     seats: {
+  //       sl: 24,
+  //       ac3: 12,
+  //       ac2: 32,
+  //       ac1: 44,
+  //     },
+  //   },
+  //   {
+  //     name: "12049 Jalpaiguri Express",
+  //     source: "Kolkata",
+  //     destination: "Jalpaiguri",
+  //     arrival: "12:45 am",
+  //     dept: "12:45 pm",
+  //     seats: {
+  //       sl: 24,
+  //       ac3: 12,
+  //       ac2: 32,
+  //       ac1: 4,
+  //     },
+  //   },
+  //   {
+  //     name: "12050 Siliguri Express",
+  //     source : "Kolkata",
+  //     destination: "Siliguri",
+  //     arrival: "12:45 am",
+  //     dept: "12:45 pm",
+  //     seats: {
+  //       sl: 240,
+  //       ac3: 12,
+  //       ac2: 32,
+  //       ac1: 44,
+  //     },
+  //   },
+  //   {
+  //     arrival: "12:45 am",
+  //     dept: "12:45 pm",
+  //     name: "Chennai-Kolkata Superfast",
+  //     source: "Chennai",
+  //     destination: "Kolkata",
+  //     seats: {
+  //       sl: 24,
+  //       ac3: 120,
+  //       ac2: 32,
+  //       ac1: 44,
+  //     },
+  //   },
+  //   {
+  //     name: "Delhi-Bangalore Rajdhani",
+  //     arrival: "12:45 am",
+  //     dept: "12:45 pm",
+  //     source: "New Delhi",
+  //     destination: "Bangalore",
+  //     seats: {
+  //       sl: 240,
+  //       ac3: 102,
+  //       ac2: 32,
+  //       ac1: 44,
+  //     },
+  //   },
+  // ];
   const { stations } = useSelector((state) => state.stationInfo);
-  console.log(stations);
+  console.log(stations)
+const trainDetails = data.trains.filter((train)=>(train.source===stations.source && train.destination === stations.destination))
+console.log(stations);
   return (
     <>
     <Box display={'flex'} justifyContent={'space-between'}    paddingY={5}

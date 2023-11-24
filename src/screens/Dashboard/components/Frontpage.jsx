@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
@@ -7,17 +7,23 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TrainImg from "../../../assets/TrainImg.png";
+import SignImg from "../../../assets/sign-img.jpeg";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getFromStationThunk,
   getToStationThunk,
 } from "../../../../redux/features/StationsInfo/StationsInfoThunk";
+import data from "../../../../trainInfo.json";
 import { Autocomplete } from "@mui/material";
 import { setBookingStn } from "../../../../redux/features/StationsInfo/StationsInfoSlice";
+import {
+  SignIn,
+  SignUp
+} from "@clerk/clerk-react";
 
 export default function SignInSide() {
   const navigate = useNavigate();
@@ -153,15 +159,32 @@ export default function SignInSide() {
     { title: "Monty Python and the Holy Grail", year: 1975 },
   ];
   console.log(to);
-
+  const location = useLocation().pathname;
+  const isDashboard = location === "/";
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(setBookingStn({ sourceStn, destStn }));
     navigate("/availableTrains");
   };
-
+  console.log(location)
+  const[destination, setDestination] = useState(data.trains);
+  const[source, setSource] = useState(data.trains);
+  useEffect(() => {
+   let result = data.trains.reduce((acc, obj) => {
+      const key = obj.destination; // Assuming 'id' is the key you want to make unique
+      if (!acc[key]) {
+        acc[key] = obj;
+      }
+      return acc;
+    }, {});
+    // console.log(typeof Object.entries(result))
+    result = Object.values(result)
+    console.log(result)
+    setDestination(result)
+    setSource(result)
+  }, [])
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
+    <Grid container component="main" sx={{ height: "100vh" }} className="overflow-hidden">
       <Grid
         item
         xs={false}
@@ -176,137 +199,133 @@ export default function SignInSide() {
               : t.palette.grey[900],
           backgroundSize: "cover",
           backgroundPosition: "center",
-        }}
-      >
+        }}>
         <Box
           component={"img"}
-          src={TrainImg}
-          sx={{ objectFit: "cover", height: "100vh", width: "60vw" }}
-        ></Box>
+          src={isDashboard ? TrainImg : SignImg}
+          sx={{ objectFit: "cover", height: "100vh", width: "65vw"}}></Box>
       </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <Box
-          sx={{
-            my: 8,
-            mx: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-      <LockOutlinedIcon />
-    </Avatar> */}
-          <Typography component="h1" variant="h5">
-            <div className="text-3xl text-[#0578FF]  flex">
-              <span className="text-black">Train</span>{" "}
-              <span className="italic">X</span>
-            </div>
-          </Typography>
-          {/* <img src={Logo} alt="" style={{ width: '200px', height: 'auto',marginBottom:'60px'}} /> */}
+        {isDashboard ?
           <Box
             sx={{
+              my: 8,
+              mx: 4,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              textAlign: "center",
-              my: 5,
-            }}
-          >
-            <div className="bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600">
-              Hey Travellers
-            </div>
-            {/* <Button variant="contained" color="primary" sx={{ mb: 2 }}>
+            }}>
+            {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+      <LockOutlinedIcon />
+    </Avatar> */}
+            <Typography component="h1" variant="h5">
+              <div className="text-3xl text-[#0578FF]  flex">
+                <span className="text-black">Train</span>{" "}
+                <span className="italic">X</span>
+              </div>
+            </Typography>
+            {/* <img src={Logo} alt="" style={{ width: '200px', height: 'auto',marginBottom:'60px'}} /> */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                my: 5,
+              }}>
+              <div className="bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600">
+                Hey Travellers
+              </div>
+              {/* <Button variant="contained" color="primary" sx={{ mb: 2 }}>
     Hey, Travellers!
   </Button> */}
-            <Typography variant="h5" sx={{ fontWeight: "semi-bold" }}>
-              made your bookings experience easy !!
-            </Typography>
-          </Box>
-          <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            gap={3}
-            display={"flex"}
-            flexDirection={"column"}
-            sx={{ mt: 1, width: "80%" }}
-          >
-            <Box sx={{ display: "flex", gap: 2 }}>
-              <Box width={"100%"}>
-                <Autocomplete
-                  id="free-solo-demo"
-                  freeSolo
-                  fullWidth
-                  value={sourceStn}
-                  options={from.map((option) => option[1] + " - " + option[0])}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Source"
-                      onChange={(e) => {
-                        setSourceStn(e.target.value);
-                        e.target.value.length >= 2 &&
-                          dispatch(
-                            getFromStationThunk({ search: e.target.value })
-                          );
-                      }}
-                    />
-                  )}
-                />
-              </Box>
-              <Box width={"100%"}>
-                <Autocomplete
-                  id="free-solo-demo"
-                  freeSolo
-                  fullWidth
-                  value={destStn}
-                  options={to.map((option) => option[1] + " - " + option[0])}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      label="Destination"
-                      onChange={(e) => {
-                        setDestStn(e.target.value);
-                        e.target.value.length >= 2 &&
-                          dispatch(
-                            getToStationThunk({ search: e.target.value })
-                          );
-                      }}
-                    />
-                  )}
-                />
-              </Box>
+              <Typography variant="h5" sx={{ fontWeight: "semi-bold" }}>
+                made your bookings experience easy !!
+              </Typography>
             </Box>
-            <Box display={"flex"} justifyContent={"center"}>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker
-                  value={dayjs()}
-                  renderInput={(props) => (
-                    <TextField
-                      {...props}
-                      label="Term Start Date"
-                      id="mui-pickers-date"
-                      sx={{ mb: 2, width: "100%" }}
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              gap={3}
+              display={"flex"}
+              flexDirection={"column"}
+              sx={{ mt: 1, width: "80%" }}>
+              <Box sx={{ display: "flex", gap: 2 }}>
+                <Box width={"100%"}>
+                  <Autocomplete
+                 freeSolo
+                 fullWidth
+                 value={sourceStn}
+                 options={source?.map((option) =>option.source)}
+                 renderInput={(params) => (
+                   <TextField
+                     {...params}
+                     label="Source"
+                     onChange={(e) => {
+                       setSourceStn(e.target.value);
+                     }}
+                   />
+                 )}
                     />
-                  )}
-                />
-              </LocalizationProvider>
-            </Box>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2, backgroundColor: "green", color: "white" }}
+                </Box>
+                {console.log(destination)}
+                <Box width={"100%"}>
+                  <Autocomplete
+                   onInputChange={(event, value)=>{
+                      console.log(value);
+                      // setDestination(data.trains.includes(value))
+                   }}
+                    id="free-solo-demo"
+                    freeSolo
+                    fullWidth
+                    value={destStn}
+                    options={destination?.map((option) =>option.destination)}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label="Destination"
+                        onChange={(e) => {
+                          setDestStn(e.target.value);
+                        }}
+                      />
+                    )}
+                  />
+                </Box>
+              </Box>
+              <Box display={"flex"} justifyContent={"center"}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker
+                    value={dayjs()}
+                    renderInput={(props) => (
+                      <TextField
+                        {...props}
+                        label="Term Start Date"
+                        id="mui-pickers-date"
+                        sx={{ mb: 2, width: "100%" }}
+                      />
+                    )}
+                  />
+                </LocalizationProvider>
+              </Box>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2, backgroundColor: "green", color: "white" }}
               // onClick={() => {
               // navigate("/availableTrains");
               // }}
-            >
-              Find Trains
-            </Button>
+              >
+                Find Trains
+              </Button>
+            </Box>
+            <Copyright sx={{ mt: 5 }} />
           </Box>
-          <Copyright sx={{ mt: 5 }} />
-        </Box>
+          : <Box
+            className="flex justify-center py-12 w-full">
+            {location === "/sign-in" ? <SignIn routing="path" path="/sign-in" /> : <SignUp routing="path" path="/sign-up" />}
+          </Box>}
       </Grid>
     </Grid>
   );
@@ -318,8 +337,7 @@ function Copyright(props) {
       variant="body2"
       color="text.secondary"
       align="center"
-      {...props}
-    >
+      {...props}>
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         TrainX

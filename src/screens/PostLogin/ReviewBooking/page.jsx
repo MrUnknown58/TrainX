@@ -110,7 +110,6 @@ const ReviewBooking = () => {
           >
             <TrainSelected/>
             </Card>
-
             <Bill details={details} total={"Rs.3500"} />
     <div className='w-full pb-1'>
       <Link to={'/paymentportal'}>

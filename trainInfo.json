@@ -1,0 +1,803 @@
+{
+    "trains": [
+        {
+            "id": "6547d91c082ca3b80954bdc3",
+            "train_name": "Duronto Express",
+            "train_id": "23184",
+            "source": "Chennai",
+            "destination": "Bangalore",
+            "arrival_time": "08:30",
+            "departure_time": "22:30",
+            "createdAt": "2023-11-05T18:04:12.766Z",
+            "updatedAt": "2023-11-05T18:04:12.766Z",
+            "seats": {
+                "id": "6547d91c082ca3b80954bdc3",
+                "general_class": 150,
+                "sleeper_class": null,
+                "first_class": 40
+            }
+        },
+        {
+            "id": "6547d91d082ca3b80954bdc4",
+            "train_name": "Shatabdi Express",
+            "train_id": "58932",
+            "source": "Hyderabad",
+            "destination": "Vizag",
+            "arrival_time": "14:30",
+            "departure_time": "06:30",
+            "createdAt": "2023-11-05T18:04:13.190Z",
+            "updatedAt": "2023-11-05T18:04:13.190Z",
+            "seats": {
+                "id": "6547d91d082ca3b80954bdc4",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d91d082ca3b80954bdc5",
+            "train_name": "Gatimaan Express",
+            "train_id": "72651",
+            "source": "Lucknow",
+            "destination": "Agra",
+            "arrival_time": "10:15",
+            "departure_time": "08:00",
+            "createdAt": "2023-11-05T18:04:13.638Z",
+            "updatedAt": "2023-11-05T18:04:13.638Z",
+            "seats": {
+                "id": "6547d91d082ca3b80954bdc5",
+                "general_class": 210,
+                "sleeper_class": null,
+                "first_class": 20
+            }
+        },
+        {
+            "id": "6547d91e082ca3b80954bdc6",
+            "train_name": "Sampark Kranti Express",
+            "train_id": "36498",
+            "source": "Pune",
+            "destination": "Indore",
+            "arrival_time": "17:45",
+            "departure_time": "11:00",
+            "createdAt": "2023-11-05T18:04:14.024Z",
+            "updatedAt": "2023-11-05T18:04:14.024Z",
+            "seats": {
+                "id": "6547d91e082ca3b80954bdc6",
+                "general_class": 240,
+                "sleeper_class": null,
+                "first_class": 10
+            }
+        },
+        {
+            "id": "6547d91e082ca3b80954bdc7",
+            "train_name": "Mumbai Local",
+            "train_id": "14926",
+            "source": "Mumbai",
+            "destination": "Thane",
+            "arrival_time": "09:30",
+            "departure_time": "06:15",
+            "createdAt": "2023-11-05T18:04:14.434Z",
+            "updatedAt": "2023-11-05T18:04:14.434Z",
+            "seats": {
+                "id": "6547d91e082ca3b80954bdc7",
+                "general_class": 300,
+                "sleeper_class": null,
+                "first_class": 40
+            }
+        },
+        {
+            "id": "6547d91e082ca3b80954bdc8",
+            "train_name": "Chennai Express",
+            "train_id": "87253",
+            "source": "Chennai",
+            "destination": "Delhi",
+            "arrival_time": "18:20",
+            "departure_time": "09:00",
+            "createdAt": "2023-11-05T18:04:14.843Z",
+            "updatedAt": "2023-11-05T18:04:14.843Z",
+            "seats": {
+                "id": "6547d91e082ca3b80954bdc8",
+                "general_class": 200,
+                "sleeper_class": null,
+                "first_class": 50
+            }
+        },
+        {
+            "id": "6547d91f082ca3b80954bdc9",
+            "train_name": "Howrah Mail",
+            "train_id": "41697",
+            "source": "Kolkata",
+            "destination": "Mumbai",
+            "arrival_time": "07:45",
+            "departure_time": "19:30",
+            "createdAt": "2023-11-05T18:04:15.252Z",
+            "updatedAt": "2023-11-05T18:04:15.252Z",
+            "seats": {
+                "id": "6547d91f082ca3b80954bdc9",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d91f082ca3b80954bdca",
+            "train_name": "Bangalore Express",
+            "train_id": "23579",
+            "source": "Bangalore",
+            "destination": "Hyderabad",
+            "arrival_time": "16:15",
+            "departure_time": "10:45",
+            "createdAt": "2023-11-05T18:04:15.663Z",
+            "updatedAt": "2023-11-05T18:04:15.663Z",
+            "seats": {
+                "id": "6547d91f082ca3b80954bdca",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d920082ca3b80954bdcb",
+            "train_name": "Delhi Duronto",
+            "train_id": "68324",
+            "source": "Delhi",
+            "destination": "Mumbai",
+            "arrival_time": "14:00",
+            "departure_time": "08:30",
+            "createdAt": "2023-11-05T18:04:16.071Z",
+            "updatedAt": "2023-11-05T18:04:16.071Z",
+            "seats": {
+                "id": "6547d920082ca3b80954bdcb",
+                "general_class": 190,
+                "sleeper_class": null,
+                "first_class": 45
+            }
+        },
+        {
+            "id": "6547d920082ca3b80954bdcc",
+            "train_name": "Kolkata Rajdhani",
+            "train_id": "41687",
+            "source": "Kolkata",
+            "destination": "New Delhi",
+            "arrival_time": "08:10",
+            "departure_time": "17:30",
+            "createdAt": "2023-11-05T18:04:16.482Z",
+            "updatedAt": "2023-11-05T18:04:16.482Z",
+            "seats": {
+                "id": "6547d920082ca3b80954bdcc",
+                "general_class": 140,
+                "sleeper_class": null,
+                "first_class": 55
+            }
+        },
+        {
+            "id": "6547d920082ca3b80954bdcd",
+            "train_name": "Chennai Superfast",
+            "train_id": "23579",
+            "source": "Chennai",
+            "destination": "Bangalore",
+            "arrival_time": "15:45",
+            "departure_time": "09:30",
+            "createdAt": "2023-11-05T18:04:16.891Z",
+            "updatedAt": "2023-11-05T18:04:16.891Z",
+            "seats": {
+                "id": "6547d920082ca3b80954bdcd",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d921082ca3b80954bdce",
+            "train_name": "Mumbai-Pune Express",
+            "train_id": "68324",
+            "source": "Mumbai",
+            "destination": "Pune",
+            "arrival_time": "19:45",
+            "departure_time": "13:00",
+            "createdAt": "2023-11-05T18:04:17.300Z",
+            "updatedAt": "2023-11-05T18:04:17.300Z",
+            "seats": {
+                "id": "6547d921082ca3b80954bdce",
+                "general_class": 220,
+                "sleeper_class": null,
+                "first_class": 25
+            }
+        },
+        {
+            "id": "6547d921082ca3b80954bdcf",
+            "train_name": "Delhi-Agra Superfast",
+            "train_id": "52746",
+            "source": "Delhi",
+            "destination": "Agra",
+            "arrival_time": "13:30",
+            "departure_time": "10:15",
+            "createdAt": "2023-11-05T18:04:17.684Z",
+            "updatedAt": "2023-11-05T18:04:17.684Z",
+            "seats": {
+                "id": "6547d921082ca3b80954bdcf",
+                "general_class": 130,
+                "sleeper_class": null,
+                "first_class": 20
+            }
+        },
+        {
+            "id": "6547d922082ca3b80954bdd0",
+            "train_name": "Chennai-Bangalore Fast Passenger",
+            "train_id": "91028",
+            "source": "Chennai",
+            "destination": "Bangalore",
+            "arrival_time": "22:30",
+            "departure_time": "14:45",
+            "createdAt": "2023-11-05T18:04:18.120Z",
+            "updatedAt": "2023-11-05T18:04:18.120Z",
+            "seats": {
+                "id": "6547d922082ca3b80954bdd0",
+                "general_class": 250,
+                "sleeper_class": null,
+                "first_class": 15
+            }
+        },
+        {
+            "id": "6547d922082ca3b80954bdd1",
+            "train_name": "Mumbai Local",
+            "train_id": "34567",
+            "source": "Mumbai",
+            "destination": "Thane",
+            "arrival_time": "08:45",
+            "departure_time": "06:30",
+            "createdAt": "2023-11-05T18:04:18.530Z",
+            "updatedAt": "2023-11-05T18:04:18.530Z",
+            "seats": {
+                "id": "6547d922082ca3b80954bdd1",
+                "general_class": 280,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d922082ca3b80954bdd2",
+            "train_name": "Delhi-Jaipur Express",
+            "train_id": "86219",
+            "source": "Delhi",
+            "destination": "Jaipur",
+            "arrival_time": "21:15",
+            "departure_time": "14:30",
+            "createdAt": "2023-11-05T18:04:18.939Z",
+            "updatedAt": "2023-11-05T18:04:18.939Z",
+            "seats": {
+                "id": "6547d922082ca3b80954bdd2",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 25
+            }
+        },
+        {
+            "id": "6547d923082ca3b80954bdd3",
+            "train_name": "Kolkata-Mumbai Superfast",
+            "train_id": "42931",
+            "source": "Kolkata",
+            "destination": "Mumbai",
+            "arrival_time": "10:30",
+            "departure_time": "02:15",
+            "createdAt": "2023-11-05T18:04:19.348Z",
+            "updatedAt": "2023-11-05T18:04:19.348Z",
+            "seats": {
+                "id": "6547d923082ca3b80954bdd3",
+                "general_class": 190,
+                "sleeper_class": null,
+                "first_class": 40
+            }
+        },
+        {
+            "id": "6547d923082ca3b80954bdd4",
+            "train_name": "Chennai-Hyderabad Express",
+            "train_id": "75183",
+            "source": "Chennai",
+            "destination": "Hyderabad",
+            "arrival_time": "19:40",
+            "departure_time": "12:00",
+            "createdAt": "2023-11-05T18:04:19.758Z",
+            "updatedAt": "2023-11-05T18:04:19.758Z",
+            "seats": {
+                "id": "6547d923082ca3b80954bdd4",
+                "general_class": 200,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d924082ca3b80954bdd5",
+            "train_name": "Mumbai-Delhi Superfast",
+            "train_id": "27645",
+            "source": "Mumbai",
+            "destination": "New Delhi",
+            "arrival_time": "11:20",
+            "departure_time": "05:45",
+            "createdAt": "2023-11-05T18:04:20.168Z",
+            "updatedAt": "2023-11-05T18:04:20.168Z",
+            "seats": {
+                "id": "6547d924082ca3b80954bdd5",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 40
+            }
+        },
+        {
+            "id": "6547d924082ca3b80954bdd6",
+            "train_name": "Chennai-Kolkata Express",
+            "train_id": "54378",
+            "source": "Chennai",
+            "destination": "Kolkata",
+            "arrival_time": "13:15",
+            "departure_time": "09:30",
+            "createdAt": "2023-11-05T18:04:20.578Z",
+            "updatedAt": "2023-11-05T18:04:20.578Z",
+            "seats": {
+                "id": "6547d924082ca3b80954bdd6",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d924082ca3b80954bdd7",
+            "train_name": "Bangalore-Hyderabad Superfast",
+            "train_id": "19827",
+            "source": "Bangalore",
+            "destination": "Hyderabad",
+            "arrival_time": "18:40",
+            "departure_time": "14:00",
+            "createdAt": "2023-11-05T18:04:20.988Z",
+            "updatedAt": "2023-11-05T18:04:20.988Z",
+            "seats": {
+                "id": "6547d924082ca3b80954bdd7",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d925082ca3b80954bdd8",
+            "train_name": "Delhi-Mumbai Rajdhani",
+            "train_id": "63754",
+            "source": "New Delhi",
+            "destination": "Mumbai",
+            "arrival_time": "10:10",
+            "departure_time": "17:30",
+            "createdAt": "2023-11-05T18:04:21.397Z",
+            "updatedAt": "2023-11-05T18:04:21.397Z",
+            "seats": {
+                "id": "6547d925082ca3b80954bdd8",
+                "general_class": 140,
+                "sleeper_class": null,
+                "first_class": 55
+            }
+        },
+        {
+            "id": "6547d925082ca3b80954bdd9",
+            "train_name": "Kolkata-Chennai Express",
+            "train_id": "89172",
+            "source": "Kolkata",
+            "destination": "Chennai",
+            "arrival_time": "15:30",
+            "departure_time": "09:45",
+            "createdAt": "2023-11-05T18:04:21.806Z",
+            "updatedAt": "2023-11-05T18:04:21.806Z",
+            "seats": {
+                "id": "6547d925082ca3b80954bdd9",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 32
+            }
+        },
+        {
+            "id": "6547d926082ca3b80954bdda",
+            "train_name": "Hyderabad-Bangalore Superfast",
+            "train_id": "12489",
+            "source": "Hyderabad",
+            "destination": "Bangalore",
+            "arrival_time": "20:15",
+            "departure_time": "14:45",
+            "createdAt": "2023-11-05T18:04:22.215Z",
+            "updatedAt": "2023-11-05T18:04:22.215Z",
+            "seats": {
+                "id": "6547d926082ca3b80954bdda",
+                "general_class": 190,
+                "sleeper_class": null,
+                "first_class": 28
+            }
+        },
+        {
+            "id": "6547d926082ca3b80954bddb",
+            "train_name": "Delhi-Kolkata Duronto",
+            "train_id": "36541",
+            "source": "New Delhi",
+            "destination": "Kolkata",
+            "arrival_time": "09:50",
+            "departure_time": "16:15",
+            "createdAt": "2023-11-05T18:04:22.626Z",
+            "updatedAt": "2023-11-05T18:04:22.626Z",
+            "seats": {
+                "id": "6547d926082ca3b80954bddb",
+                "general_class": 155,
+                "sleeper_class": null,
+                "first_class": 37
+            }
+        },
+        {
+            "id": "6547d927082ca3b80954bddc",
+            "train_name": "Mumbai-Chennai Express",
+            "train_id": "94876",
+            "source": "Mumbai",
+            "destination": "Chennai",
+            "arrival_time": "12:30",
+            "departure_time": "06:45",
+            "createdAt": "2023-11-05T18:04:23.034Z",
+            "updatedAt": "2023-11-05T18:04:23.034Z",
+            "seats": {
+                "id": "6547d927082ca3b80954bddc",
+                "general_class": 165,
+                "sleeper_class": null,
+                "first_class": 33
+            }
+        },
+        {
+            "id": "6547d927082ca3b80954bddd",
+            "train_name": "Kolkata-Delhi Superfast",
+            "train_id": "51739",
+            "source": "Kolkata",
+            "destination": "New Delhi",
+            "arrival_time": "14:45",
+            "departure_time": "10:00",
+            "createdAt": "2023-11-05T18:04:23.444Z",
+            "updatedAt": "2023-11-05T18:04:23.444Z",
+            "seats": {
+                "id": "6547d927082ca3b80954bddd",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 29
+            }
+        },
+        {
+            "id": "6547d927082ca3b80954bdde",
+            "train_name": "Hyderabad-Delhi Rajdhani",
+            "train_id": "72864",
+            "source": "Hyderabad",
+            "destination": "New Delhi",
+            "arrival_time": "09:20",
+            "departure_time": "17:45",
+            "createdAt": "2023-11-05T18:04:23.855Z",
+            "updatedAt": "2023-11-05T18:04:23.855Z",
+            "seats": {
+                "id": "6547d927082ca3b80954bdde",
+                "general_class": 150,
+                "sleeper_class": null,
+                "first_class": 42
+            }
+        },
+        {
+            "id": "6547d928082ca3b80954bddf",
+            "train_name": "Chennai-Bangalore Superfast",
+            "train_id": "35687",
+            "source": "Chennai",
+            "destination": "Bangalore",
+            "arrival_time": "17:00",
+            "departure_time": "11:20",
+            "createdAt": "2023-11-05T18:04:24.226Z",
+            "updatedAt": "2023-11-05T18:04:24.226Z",
+            "seats": {
+                "id": "6547d928082ca3b80954bddf",
+                "general_class": 185,
+                "sleeper_class": null,
+                "first_class": 31
+            }
+        },
+        {
+            "id": "6547d928082ca3b80954bde0",
+            "train_name": "Delhi-Mumbai Express",
+            "train_id": "19428",
+            "source": "New Delhi",
+            "destination": "Mumbai",
+            "arrival_time": "14:45",
+            "departure_time": "09:00",
+            "createdAt": "2023-11-05T18:04:24.673Z",
+            "updatedAt": "2023-11-05T18:04:24.673Z",
+            "seats": {
+                "id": "6547d928082ca3b80954bde0",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 36
+            }
+        },
+        {
+            "id": "6547d929082ca3b80954bde1",
+            "train_name": "Kolkata-Chennai Duronto",
+            "train_id": "87216",
+            "source": "Kolkata",
+            "destination": "Chennai",
+            "arrival_time": "12:10",
+            "departure_time": "07:30",
+            "createdAt": "2023-11-05T18:04:25.082Z",
+            "updatedAt": "2023-11-05T18:04:25.082Z",
+            "seats": {
+                "id": "6547d929082ca3b80954bde1",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d929082ca3b80954bde2",
+            "train_name": "Bangalore-Hyderabad Express",
+            "train_id": "63475",
+            "source": "Bangalore",
+            "destination": "Hyderabad",
+            "arrival_time": "18:20",
+            "departure_time": "12:45",
+            "createdAt": "2023-11-05T18:04:25.493Z",
+            "updatedAt": "2023-11-05T18:04:25.493Z",
+            "seats": {
+                "id": "6547d929082ca3b80954bde2",
+                "general_class": 155,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d929082ca3b80954bde3",
+            "train_name": "Mumbai-Delhi Duronto",
+            "train_id": "28194",
+            "source": "Mumbai",
+            "destination": "New Delhi",
+            "arrival_time": "10:45",
+            "departure_time": "06:00",
+            "createdAt": "2023-11-05T18:04:25.902Z",
+            "updatedAt": "2023-11-05T18:04:25.902Z",
+            "seats": {
+                "id": "6547d929082ca3b80954bde3",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 32
+            }
+        },
+        {
+            "id": "6547d92a082ca3b80954bde4",
+            "train_name": "Chennai-Kolkata Rajdhani",
+            "train_id": "65972",
+            "source": "Chennai",
+            "destination": "Kolkata",
+            "arrival_time": "13:40",
+            "departure_time": "09:15",
+            "createdAt": "2023-11-05T18:04:26.312Z",
+            "updatedAt": "2023-11-05T18:04:26.312Z",
+            "seats": {
+                "id": "6547d92a082ca3b80954bde4",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d92a082ca3b80954bde5",
+            "train_name": "Bangalore-Delhi Superfast",
+            "train_id": "47385",
+            "source": "Bangalore",
+            "destination": "New Delhi",
+            "arrival_time": "11:30",
+            "departure_time": "07:45",
+            "createdAt": "2023-11-05T18:04:26.721Z",
+            "updatedAt": "2023-11-05T18:04:26.721Z",
+            "seats": {
+                "id": "6547d92a082ca3b80954bde5",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 38
+            }
+        },
+        {
+            "id": "6547d92b082ca3b80954bde6",
+            "train_name": "Delhi-Hyderabad Express",
+            "train_id": "19842",
+            "source": "New Delhi",
+            "destination": "Hyderabad",
+            "arrival_time": "18:50",
+            "departure_time": "13:15",
+            "createdAt": "2023-11-05T18:04:27.131Z",
+            "updatedAt": "2023-11-05T18:04:27.131Z",
+            "seats": {
+                "id": "6547d92b082ca3b80954bde6",
+                "general_class": 155,
+                "sleeper_class": null,
+                "first_class": 33
+            }
+        },
+        {
+            "id": "6547d92b082ca3b80954bde7",
+            "train_name": "Kolkata-Mumbai Duronto",
+            "train_id": "52673",
+            "source": "Kolkata",
+            "destination": "Mumbai",
+            "arrival_time": "09:15",
+            "departure_time": "05:30",
+            "createdAt": "2023-11-05T18:04:27.541Z",
+            "updatedAt": "2023-11-05T18:04:27.541Z",
+            "seats": {
+                "id": "6547d92b082ca3b80954bde7",
+                "general_class": 165,
+                "sleeper_class": null,
+                "first_class": 34
+            }
+        },
+        {
+            "id": "6547d92b082ca3b80954bde8",
+            "train_name": "Hyderabad-Chennai Superfast",
+            "train_id": "83761",
+            "source": "Hyderabad",
+            "destination": "Chennai",
+            "arrival_time": "14:20",
+            "departure_time": "08:45",
+            "createdAt": "2023-11-05T18:04:27.950Z",
+            "updatedAt": "2023-11-05T18:04:27.950Z",
+            "seats": {
+                "id": "6547d92b082ca3b80954bde8",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 29
+            }
+        },
+        {
+            "id": "6547d92c082ca3b80954bde9",
+            "train_name": "Mumbai-Kolkata Express",
+            "train_id": "92457",
+            "source": "Mumbai",
+            "destination": "Kolkata",
+            "arrival_time": "16:15",
+            "departure_time": "11:30",
+            "createdAt": "2023-11-05T18:04:28.360Z",
+            "updatedAt": "2023-11-05T18:04:28.360Z",
+            "seats": {
+                "id": "6547d92c082ca3b80954bde9",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d92c082ca3b80954bdea",
+            "train_name": "Delhi-Chennai Superfast",
+            "train_id": "71628",
+            "source": "New Delhi",
+            "destination": "Chennai",
+            "arrival_time": "17:30",
+            "departure_time": "12:45",
+            "createdAt": "2023-11-05T18:04:28.769Z",
+            "updatedAt": "2023-11-05T18:04:28.769Z",
+            "seats": {
+                "id": "6547d92c082ca3b80954bdea",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 40
+            }
+        },
+        {
+            "id": "6547d92d082ca3b80954bdeb",
+            "train_name": "Chennai-Hyderabad Rajdhani",
+            "train_id": "34926",
+            "source": "Chennai",
+            "destination": "Hyderabad",
+            "arrival_time": "15:10",
+            "departure_time": "09:35",
+            "createdAt": "2023-11-05T18:04:29.178Z",
+            "updatedAt": "2023-11-05T18:04:29.178Z",
+            "seats": {
+                "id": "6547d92d082ca3b80954bdeb",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 31
+            }
+        },
+        {
+            "id": "6547d92d082ca3b80954bdec",
+            "train_name": "Bangalore-Mumbai Duronto",
+            "train_id": "58234",
+            "source": "Bangalore",
+            "destination": "Mumbai",
+            "arrival_time": "11:45",
+            "departure_time": "07:00",
+            "createdAt": "2023-11-05T18:04:29.585Z",
+            "updatedAt": "2023-11-05T18:04:29.585Z",
+            "seats": {
+                "id": "6547d92d082ca3b80954bdec",
+                "general_class": 185,
+                "sleeper_class": null,
+                "first_class": 36
+            }
+        },
+        {
+            "id": "6547d92d082ca3b80954bded",
+            "train_name": "Hyderabad-Delhi Duronto",
+            "train_id": "76891",
+            "source": "Hyderabad",
+            "destination": "New Delhi",
+            "arrival_time": "18:40",
+            "departure_time": "13:05",
+            "createdAt": "2023-11-05T18:04:29.958Z",
+            "updatedAt": "2023-11-05T18:04:29.958Z",
+            "seats": {
+                "id": "6547d92d082ca3b80954bded",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 32
+            }
+        },
+        {
+            "id": "6547d92e082ca3b80954bdee",
+            "train_name": "Mumbai-Chennai Duronto",
+            "train_id": "17689",
+            "source": "Mumbai",
+            "destination": "Chennai",
+            "arrival_time": "12:30",
+            "departure_time": "06:45",
+            "createdAt": "2023-11-05T18:04:30.305Z",
+            "updatedAt": "2023-11-05T18:04:30.305Z",
+            "seats": {
+                "id": "6547d92e082ca3b80954bdee",
+                "general_class": 160,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        },
+        {
+            "id": "6547d92e082ca3b80954bdef",
+            "train_name": "Chennai-Kolkata Superfast",
+            "train_id": "917618",
+            "source": "Chennai",
+            "destination": "Kolkata",
+            "arrival_time": "16:20",
+            "departure_time": "10:45",
+            "createdAt": "2023-11-05T18:04:30.715Z",
+            "updatedAt": "2023-11-05T18:04:30.715Z",
+            "seats": {
+                "id": "6547d92e082ca3b80954bdef",
+                "general_class": 180,
+                "sleeper_class": null,
+                "first_class": 30
+            }
+        },
+        {
+            "id": "6547d92f082ca3b80954bdf0",
+            "train_name": "Delhi-Bangalore Rajdhani",
+            "train_id": "891761",
+            "source": "New Delhi",
+            "destination": "Bangalore",
+            "arrival_time": "15:50",
+            "departure_time": "10:15",
+            "createdAt": "2023-11-05T18:04:31.125Z",
+            "updatedAt": "2023-11-05T18:04:31.125Z",
+            "seats": {
+                "id": "6547d92f082ca3b80954bdf0",
+                "general_class": 175,
+                "sleeper_class": null,
+                "first_class": 33
+            }
+        },
+        {
+            "id": "6547d92f082ca3b80954bdf1",
+            "train_name": "Kolkata-Hyderabad Express",
+            "train_id": "189176",
+            "source": "Kolkata",
+            "destination": "Hyderabad",
+            "arrival_time": "14:45",
+            "departure_time": "09:00",
+            "createdAt": "2023-11-05T18:04:31.535Z",
+            "updatedAt": "2023-11-05T18:04:31.535Z",
+            "seats": {
+                "id": "6547d92f082ca3b80954bdf1",
+                "general_class": 170,
+                "sleeper_class": null,
+                "first_class": 35
+            }
+        }
+    ]
+}
