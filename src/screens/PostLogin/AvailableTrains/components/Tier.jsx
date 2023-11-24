@@ -15,16 +15,16 @@ const Tier = ({ seats }) => {
         }}
       >
         <Link to={"/reviewBooking"}>
-          <Class tier={"SL"} seats={seats?.sl} bgcolor={"#ACFF9F"} />
+          <Class tier={"General"} seats={seats?.general_class} bgcolor={"#ACFF9F"} />
         </Link>
         <Link to={"/reviewBooking"}>
-          <Class tier={"3AC"} seats={seats?.ac3} bgcolor={"#FFCDCD"} />
+          <Class tier={"SL"} seats={seats?.general_class - seats?.first_class - 10} bgcolor={"#FFCDCD"} />
         </Link>
         <Link to={"/reviewBooking"}>
-          <Class tier={"2AC"} seats={seats?.ac2} bgcolor={"#FF9C27"} />
+          <Class tier={"3AC"} seats={seats?.first_class} bgcolor={"#FF9C27"} />
         </Link>
         <Link to={"/reviewBooking"}>
-          <Class tier={"1AC"} seats={seats?.ac1} bgcolor={"crimson"} />
+          <Class tier={"2AC"} seats={seats?.first_class - 10} bgcolor={"crimson"} />
         </Link>
       </CardContent>
       <CardActions></CardActions>

@@ -9,7 +9,7 @@ const TrainDetails = ({ details }) => {
     <Card sx={{ minWidth: 600 }}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {details?.name}
+          {details?.train_name}
         </Typography>
         <Typography
           variant="body2"
@@ -28,8 +28,8 @@ const TrainDetails = ({ details }) => {
           display={"flex"}
           alignItems={"center"}
         >
-          {details?.arrival}{" "}
-          <hr className="flex-grow border-t border-gray-300" /> {details?.dept}
+          {details?.arrival_time}{" "}
+          <hr className="flex-grow border-t border-gray-300" /> {details?.departure_time}
         </Typography>
       </CardContent>
       <Tier seats={details?.seats} />
