@@ -8,6 +8,7 @@ import { setBookingStn } from "../../../../redux/features/StationsInfo/StationsI
 
 const AvailableTrains = () => {
   const { stations } = useSelector((state) => state.stationInfo);
+  console.log(stations);
   const dispatch = useDispatch();
   const [trainDetails, setTrainDetails] = useState([]);
   useEffect(() => {

@@ -1,58 +1,58 @@
-import React from 'react'
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Button, Box } from '@mui/material';
+import { Button, Box } from "@mui/material";
+import { useSelector } from "react-redux";
 
-const TrainSelected = ({name, source, destination, arrival, dept}) => {
+const TrainSelected = ({ ticketInfo }) => {
+  const trainInfo = ticketInfo.train;
+  const { stations } = useSelector((state) => state.stationInfo);
+  console.log(stations);
   return (
     <Box className="space-y-4 mb-2">
-    <Box component={"span"} className="font-semibold text-xl">
-      Boarding Details
-    </Box>
-    <Box
-      component={"div"}
-      className="font-medium flex justify-between"
-    >
-      <span>12430 - NDLS LKO AC SF</span>
-      <span className="text-[#0578FF]">Class 2A & Tatkal Quota</span>
-    </Box>
-    <Box marginBottom={55}>
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-      >
-        <p>Nov 16</p>
-        <p>Nov 17</p>
-      </Typography>
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-      >
-        <p>11:25 pm</p>
-        <p>7:25 am</p>
-      </Typography>
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        display={"flex"}
-        alignItems={"center"}
-        className="space-x-2"
-      >
-        <p className="pr-3">NDLS - New Delhi</p>{" "}
-        <hr className="flex-grow border-t border-gray-300" />
-        <p className="pl-3">HWH - Howrah</p>
-      </Typography>
-    </Box>
+      <Box component={"span"} className="font-semibold text-xl">
+        Boarding Details
+      </Box>
+      <Box component={"div"} className="font-medium flex justify-between">
+        <span>
+          {trainInfo.train_id} - {trainInfo.train_name}
+        </span>
+        <span className="text-[#0578FF] uppercase">{trainInfo.booking_class} & Tatkal Quota</span>
+      </Box>
+      <Box marginBottom={55}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}>
+          <p>{stations.date}</p>
+          <p>{stations.date}</p>
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}>
+          <p>{trainInfo.arrival_time}</p>
+          <p>{trainInfo.departure_time}</p>
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          display={"flex"}
+          alignItems={"center"}
+          className="space-x-2">
+          <p className="pr-3">{trainInfo.source}</p>{" "}
+          <hr className="flex-grow border-t border-gray-300" />
+          <p className="pl-3">{trainInfo.destination}</p>
+        </Typography>
+      </Box>
       <Button variant="outlined">Change the Boarding station</Button>
-  </Box>
-  )
-}
+    </Box>
+  );
+};
 
-export default TrainSelected
+export default TrainSelected;
