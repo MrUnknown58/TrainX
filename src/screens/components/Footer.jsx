@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -38,16 +39,24 @@ const Footer = () => {
             <div></div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium">Customer Service</p>
+              <Link to={"/myBookings"}>
+                <p className="font-medium">Customer Service</p>
+              </Link>
             </div>
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium">About Us</p>
+              <Link to={"/myBookings"}>
+                <p className="font-medium">About Us</p>
+              </Link>
             </div>
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium">Privacy</p>
+              <Link to={"/myBookings"}>
+                <p className="font-medium">Privacy</p>
+              </Link>
             </div>
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium">Career</p>
+              <Link to={"/myBookings"}>
+                <p className="font-medium">Career</p>
+              </Link>
             </div>
             <div className="col-span-2 sm:col-span-1">
               <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">

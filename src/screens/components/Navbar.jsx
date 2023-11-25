@@ -11,8 +11,8 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="space-x-6 flex">
-        <Link to="/myBookings" className="list-none text-gray-600 text-xl">
-          My bookings
+        <Link to="/myBookings" className="bold list-none text-gray-600 text-xl">
+          My Bookings
         </Link>
         <SignedIn>
           <UserButton afterSignOutUrl="/" />

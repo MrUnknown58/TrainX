@@ -10,13 +10,15 @@ import { Link } from "react-router-dom";
 import Bill from "./components/BilDetails";
 import { useDispatch, useSelector } from "react-redux";
 import IconButton from "@mui/material/IconButton";
+import toast, { Toaster } from "react-hot-toast";
+
 import {
   deletePassengerInfo,
   editPassengerInfo,
   saveContactInfo,
   setPassengerInfo,
 } from "../../../../redux/features/StationsInfo/StationsInfoSlice";
-
+import { useNavigate } from "react-router";
 const ReviewBooking = () => {
   const { ticketInfo } = useSelector((state) => state.stationInfo);
   const { billDetails } = useSelector((state) => state.stationInfo);
@@ -41,8 +43,10 @@ const ReviewBooking = () => {
   const [add, setAdd] = useState("");
   const [contactInfo, setContactInfo] = useState({ phone: "", email: "" });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <>
+      <Toaster />
       <h2 className="text-3xl text-[#0578FF] font-bold bg-[whitesmoke] px-12 py-4">
         Review your booking
       </h2>
@@ -148,7 +152,12 @@ const ReviewBooking = () => {
                   verfiy
                 </Button>
                 <div className="pt-4">
-                  <Button variant="text">Create IRCTC Id</Button>
+                  <a
+                    href="https://contents.irctc.co.in/en/userregistration.html"
+                    target="_blank"
+                  >
+                    <Button variant="text">Create IRCTC Id</Button>
+                  </a>
                   <Button variant="text">Forget Id ?</Button>
                 </div>
               </div>
@@ -183,6 +192,7 @@ const ReviewBooking = () => {
                   variant="standard"
                   sx={{ width: "45%" }}
                   required
+                  type="email"
                   value={contactInfo.email}
                   onChange={(e) => {
                     setContactInfo({
@@ -210,15 +220,19 @@ const ReviewBooking = () => {
           </div>
           <Bill details={details} total={billDetails} />
           <div className="w-full pb-1">
-            <Link to={"/paymentportal"}>
-              <Button
-                variant="contained"
-                fullWidth
-                onClick={() => dispatch(saveContactInfo(contactInfo))}
-              >
-                Book Now
-              </Button>
-            </Link>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={() => {
+                console.log(ticketInfo?.passengers);
+                dispatch(saveContactInfo(contactInfo));
+                ticketInfo?.passengers.length > 0
+                  ? navigate("/paymentPortal")
+                  : toast.error("Please add passengers to get started");
+              }}
+            >
+              Book Now
+            </Button>
           </div>
           <div className="w-full text-center">
             <Button variant="text" color="error">
@@ -293,6 +307,7 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
       return true;
     return false;
   };
+  const navigate = useNavigate();
   return (
     <>
       <div className=" py-4">
@@ -303,6 +318,7 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
             label="Name"
             variant="standard"
             name="name"
+            type="text"
             value={formData.name}
             onChange={(e) => {
               setFormData({ ...formData, name: e.target.value });
@@ -313,6 +329,7 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
             label="Age"
             variant="standard"
             name="age"
+            type="number"
             value={formData.age}
             onChange={(e) => {
               setFormData({ ...formData, age: e.target.value });
@@ -323,6 +340,7 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
             label="Gender"
             variant="standard"
             name="gender"
+            type="text"
             value={formData.gender}
             onChange={(e) => {
               setFormData({ ...formData, gender: e.target.value });
@@ -333,6 +351,7 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
             label="Nationality"
             variant="standard"
             name="nation"
+            type="text"
             value={formData.nationality}
             onChange={(e) => {
               setFormData({ ...formData, nationality: e.target.value });
