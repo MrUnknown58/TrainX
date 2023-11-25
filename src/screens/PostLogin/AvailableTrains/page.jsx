@@ -15,8 +15,10 @@ const AvailableTrains = () => {
     setTrainDetails(
       data.trains.filter(
         (train) =>
-          train.source.includes(stations.source) &&
-          train.destination.includes(stations.destination)
+          train.source.toLowerCase().includes(stations.source.toLowerCase()) &&
+          train.destination
+            .toLowerCase()
+            .includes(stations.destination.toLowerCase())
       )
     );
   }, [stations]);
@@ -87,9 +89,13 @@ const AvailableTrains = () => {
             alignItems={"end"}
             sx={{ overflowY: "auto", height: "100%" }}
           >
-            {trainDetails?.map((details, index) => (
-              <TrainDetails key={index} details={details} />
-            ))}
+            {trainDetails.length > 0 ? (
+              trainDetails?.map((details, index) => (
+                <TrainDetails key={index} details={details} />
+              ))
+            ) : (
+              <p className="text-3xl">No trains between the given stations</p>
+            )}
           </Box>
         </Box>
       </Box>
