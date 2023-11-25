@@ -33,37 +33,9 @@ const Footer = () => {
               />
               <ArrowOutwardIcon />
             </div>
-            {/* <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
-          <form className="w-full">
-            <label htmlFor="UserEmail" className="sr-only"> Email </label>
-            <div
-              className="sm:flex sm:items-center sm:gap-4"
-            >
-              <input
-                type="email"
-                id="UserEmail"
-                placeholder="john@rhcp.com"
-                className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
-              />
-              <button
-                className="mt-1 w-full px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-sky-700 sm:mt-0 sm:w-auto sm:shrink-0"
-              >
-                Sign Up
-              </button>
-            </div>
-          </form>
-        </div> */}
 
             <div></div>
             <div></div>
-            {/* <div className="col-span-2 sm:col-span-1">
-          <p className="font-medium">Services</p>
-        </div>
-
-        <div className="col-span-2 sm:col-span-1">
-          <p className="font-medium">Legal</p>
-
-        </div> */}
 
             <div className="col-span-2 sm:col-span-1">
               <p className="font-medium">Customer Service</p>
