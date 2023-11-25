@@ -20,7 +20,6 @@ import { SignIn, SignUp } from "@clerk/clerk-react";
 
 export default function SignInSide() {
   const navigate = useNavigate();
-  const { from, to } = useSelector((state) => state.stationInfo);
   const dispatch = useDispatch();
   const [sourceStn, setSourceStn] = useState("");
   const [destStn, setDestStn] = useState("");
@@ -40,11 +39,13 @@ export default function SignInSide() {
         }),
       })
     );
-    console.log(date.toLocaleString("en-US", {
-      month: "short",
-      day: "numeric",
-      weekday: "short",
-    }))
+    console.log(
+      date.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        weekday: "short",
+      })
+    );
     navigate("/availableTrains");
   };
   const [destination, setDestination] = useState(data.trains);
@@ -76,7 +77,8 @@ export default function SignInSide() {
       container
       component="main"
       sx={{ height: "100vh" }}
-      className="overflow-hidden">
+      className="overflow-hidden"
+    >
       <Grid
         item
         xs={false}
@@ -91,11 +93,13 @@ export default function SignInSide() {
               : t.palette.grey[900],
           backgroundSize: "cover",
           backgroundPosition: "center",
-        }}>
+        }}
+      >
         <Box
           component={"img"}
           src={isDashboard ? TrainImg : SignImg}
-          sx={{ objectFit: "cover", height: "100vh", width: "65vw" }}></Box>
+          sx={{ objectFit: "cover", height: "100vh", width: "65vw" }}
+        ></Box>
       </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         {isDashboard ? (
@@ -106,7 +110,8 @@ export default function SignInSide() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-            }}>
+            }}
+          >
             <Typography component="h1" variant="h5">
               <div className="text-3xl text-[#0578FF]  flex">
                 <span className="text-black">Train</span>{" "}
@@ -120,12 +125,13 @@ export default function SignInSide() {
                 alignItems: "center",
                 textAlign: "center",
                 my: 5,
-              }}>
-              <div className="bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600">
+              }}
+            >
+              <div className="bg-[#0578FF] text-white px-4 py-2 mb-4 rounded-full hover:bg-sky-600 cursor-pointer">
                 Hey Travellers
               </div>
-              <Typography variant="h5" sx={{ fontWeight: "semi-bold" }}>
-                made your bookings experience easy !!
+              <Typography variant="h5" className="font-medium">
+                Made your Bookings Experience Easy !!
               </Typography>
             </Box>
             <Box
@@ -135,7 +141,8 @@ export default function SignInSide() {
               gap={3}
               display={"flex"}
               flexDirection={"column"}
-              sx={{ mt: 1, width: "80%" }}>
+              sx={{ mt: 1, width: "80%" }}
+            >
               <Box sx={{ display: "flex", gap: 2 }}>
                 <Box width={"100%"}>
                   <Autocomplete
@@ -194,9 +201,6 @@ export default function SignInSide() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2, backgroundColor: "green", color: "white" }}
-                // onClick={() => {
-                // navigate("/availableTrains");
-                // }}
               >
                 Find Trains
               </Button>
@@ -223,7 +227,8 @@ function Copyright(props) {
       variant="body2"
       color="text.secondary"
       align="center"
-      {...props}>
+      {...props}
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         TrainX

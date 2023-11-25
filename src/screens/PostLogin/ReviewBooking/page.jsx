@@ -30,11 +30,13 @@ const ReviewBooking = () => {
       price: ticketInfo.passengers.length,
     },
     {
-      name: "CGST & SGST",
-      price: billDetails.tax,
+      name: "Base CGST & SGST",
+      price: Math.ceil(
+        0.18 * (billDetails.base_fare * ticketInfo.passengers.length)
+      ),
     },
   ];
-  console.log(billDetails)
+  console.log(billDetails);
   console.log(ticketInfo);
   const [add, setAdd] = useState("");
   const [contactInfo, setContactInfo] = useState({ phone: "", email: "" });
@@ -49,14 +51,16 @@ const ReviewBooking = () => {
         justifyContent={"space-between"}
         paddingY={5}
         paddingX={5}
-        bgcolor={"whitesmoke"}>
+        bgcolor={"whitesmoke"}
+      >
         <Box
           display={"flex"}
           flexDirection={"column"}
           gap={2}
           alignItems={"end"}
-          sx={{ overflowY: "auto", height: "100%" }}>
-          <Card sx={{ width: 650, minHeight: 200 }}>
+          sx={{ overflowY: "auto", height: "100%" }}
+        >
+          <Card sx={{ width: 700, minHeight: 200 }}>
             <CardContent>
               <div className="flex justify-between pb-4">
                 <h4 className="font-semibold text-xl">Traveller Details</h4>
@@ -65,7 +69,8 @@ const ReviewBooking = () => {
                   color="#0578FF"
                   onClick={() => {
                     setAdd("add");
-                  }}>
+                  }}
+                >
                   <AddBoxOutlinedIcon style={{ fill: "#0578FF" }} />
                 </IconButton>
               </div>
@@ -77,14 +82,15 @@ const ReviewBooking = () => {
                   <h5>Gender</h5>
                   <h5>Nationality</h5>
                   <div className="space-x-3">
-                    {/* <CreateIcon style={{ fill: "#0578FF" }} />
-                        <DeleteIcon style={{ fill: "red" }} /> */}
                     <p className="px-2">Actions</p>
                   </div>
-                  {/* <div className="space-x-3">
-                  </div> */}
                 </div>
-                {ticketInfo.passengers.map((passenger, i) => (
+                {ticketInfo?.passengers.length === 0 && (
+                  <div className="flex justify-center py-6 text-gray-400 rounded-xl p-2 items-center space-x-1">
+                    Please add passengers to get started
+                  </div>
+                )}
+                {ticketInfo?.passengers?.map((passenger, i) => (
                   <div className="flex justify-between bg-sky-300 rounded-xl p-2 items-center space-x-1">
                     <p>{i + 1}.</p>
                     <p>{passenger.name}</p>
@@ -97,7 +103,8 @@ const ReviewBooking = () => {
                         color="#0578FF"
                         onClick={() => {
                           setAdd(i + 1);
-                        }}>
+                        }}
+                      >
                         <CreateIcon style={{ fill: "#0578FF" }} />
                       </IconButton>
                       <IconButton
@@ -105,7 +112,8 @@ const ReviewBooking = () => {
                         color="#0578FF"
                         onClick={() => {
                           dispatch(deletePassengerInfo({ id: passenger.id }));
-                        }}>
+                        }}
+                      >
                         <DeleteIcon style={{ fill: "red" }} />
                       </IconButton>
                     </div>
@@ -121,7 +129,7 @@ const ReviewBooking = () => {
               )}
             </CardContent>
           </Card>
-          <Card sx={{ minWidth: 650, minHeight: 100 }}>
+          <Card sx={{ minWidth: 700, minHeight: 100 }}>
             <CardContent>
               <div className="flex gap-8 items-center pb-4">
                 <h4 className="font-semibold text-xl">IRCTC login</h4>
@@ -146,7 +154,7 @@ const ReviewBooking = () => {
               </div>
             </CardContent>
           </Card>
-          <Card sx={{ minWidth: 650, minHeight: 100 }}>
+          <Card sx={{ minWidth: 700, minHeight: 100 }}>
             <CardContent>
               <div className="flex items-center gap-4">
                 <h4 className="font-semibold text-xl">Contact Details</h4>
@@ -188,23 +196,26 @@ const ReviewBooking = () => {
           </Card>
         </Box>
         <Box display={"flex"} flexDirection={"column"}>
-          <Card
-            sx={{
-              marginBottom: 10,
-              background: "rgba(5, 120, 255, 0.1)",
-              width: "100%",
-              paddingX: 3,
-              paddingY: 2,
-              minWidth: 500,
-              minHeight: 100,
-            }}
-            className="space-y-[55px]">
-            <TrainSelected ticketInfo={ticketInfo}/>
-          </Card>
+          <div className="px-4 pb-4">
+            <Card
+              sx={{
+                background: "rgba(5, 120, 255, 0.1)",
+                padding: 2,
+                width: 700,
+              }}
+              className="space-y-4"
+            >
+              <TrainSelected ticketInfo={ticketInfo} />
+            </Card>
+          </div>
           <Bill details={details} total={billDetails} />
           <div className="w-full pb-1">
             <Link to={"/paymentportal"}>
-              <Button variant="contained" fullWidth onClick={()=>dispatch(saveContactInfo(contactInfo))}>
+              <Button
+                variant="contained"
+                fullWidth
+                onClick={() => dispatch(saveContactInfo(contactInfo))}
+              >
                 Book Now
               </Button>
             </Link>
@@ -244,12 +255,6 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e);
-    // console.log(e.target.name);
-    // console.log(e.target.name.value);
-    // console.log(e.target.age.value);
-    // console.log(e.target.gender.value);
-    // console.log(e.target.nation.value);
     if (typeof state === "number") {
       dispatch(
         editPassengerInfo({
@@ -277,15 +282,17 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
       gender: isEdit ? ticketInfo.passengers[state - 1].gender : "",
       nationality: isEdit ? ticketInfo.passengers[state - 1].nationality : "",
     });
-    console.log({
-      name: isEdit ? ticketInfo.passengers[state - 1].name : "",
-      age: isEdit ? ticketInfo.passengers[state - 1].age : "",
-      gender: isEdit ? ticketInfo.passengers[state - 1].gender : "",
-      nationality: isEdit ? ticketInfo.passengers[state - 1].nationality : "",
-    });
   }, [state]);
-  console.log(typeof state);
-  console.log(formData);
+  const ValidateFormData = () => {
+    if (
+      formData.name !== "" &&
+      formData.age !== "" &&
+      formData.gender !== "" &&
+      formData.nationality !== ""
+    )
+      return true;
+    return false;
+  };
   return (
     <>
       <div className=" py-4">
@@ -333,7 +340,8 @@ const AddOrEditPassenger = ({ state, ticketInfo, setAdd }) => {
           />
           <button
             className="px-8 rounded-2xl bg-[#0578FF] text-white"
-            type="submit">
+            type={ValidateFormData() ? "submit" : "button"}
+          >
             save
           </button>
         </form>
