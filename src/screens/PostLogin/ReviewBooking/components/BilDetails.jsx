@@ -13,6 +13,7 @@ const Bill = ({ details, total}) => {
             <Typography className="flex justify-between text-sm">
               <p>{item?.name}</p>
               <p>{item?.price}</p>
+
             </Typography>
           ))}
         </Box>
@@ -22,7 +23,7 @@ const Bill = ({ details, total}) => {
           </Typography>
           <Typography className="flex justify-between">
             <p>Total Charge:</p>
-            <p>{total}</p>
+            <p>{(parseInt(details[0].price,10)*parseInt(details[1].price,10))+(Math.ceil(0.18*parseInt(details[0].price,10)*parseInt(details[1].price,10)))}</p>
           </Typography>
         </Box>
       </Card>

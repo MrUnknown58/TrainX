@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   from: [],
   to: [],
-  stations: { source: "", destination: "" },
+  stations: { source: "", destination: "" ,date: ""},
   ticketInfo: {
-    passengers: [{ id: "", name: "", age: "", gender: "", nationality: "" }],
+    passengers: [],
     contactInfo: { phone: "", email: "" },
     train: {
       pnr: "1234567890",
@@ -46,9 +46,45 @@ export const stationsInfoSlice = createSlice({
     setBookingStn: (state, action) => {
       state.stations = action.payload;
     },
+    setPassengerInfo: (state, action) => {
+      state.ticketInfo.passengers.push({
+        ...action.payload,
+        id: state.ticketInfo.passengers.length,
+      });
+    },
+    editPassengerInfo: (state, action) => {
+      // state.ticketInfo.passengers.pop(action.payload)
+      let edit = state.ticketInfo.passengers.filter(
+        (passenger) => passenger.id !== action.payload.id
+      );
+      state.ticketInfo.passengers = [...edit, action.payload];
+    },
+    deletePassengerInfo: (state, action) => {
+      state.ticketInfo.passengers = state.ticketInfo.passengers.filter(
+        (passenger) => passenger.id !== action.payload.id
+      );
+    },
+    updateTrainInfo: (state, action) => {
+      state.ticketInfo.train = action.payload;
+    },
+    updateBillDetails: (state, action) => {
+      state.billDetails = action.payload;
+    },
+    saveContactInfo: (state, action) => {
+      state.contactInfo = action.payload;
+    },
   },
 });
-export const { setFromStation, setToStation, setBookingStn } =
-  stationsInfoSlice.actions;
+export const {
+  setFromStation,
+  setToStation,
+  setBookingStn,
+  setPassengerInfo,
+  editPassengerInfo,
+  deletePassengerInfo,
+  updateTrainInfo,
+  updateBillDetails,
+  saveContactInfo
+} = stationsInfoSlice.actions;
 
 export default stationsInfoSlice.reducer;

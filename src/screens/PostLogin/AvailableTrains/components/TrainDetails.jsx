@@ -32,7 +32,7 @@ const TrainDetails = ({ details }) => {
           {details?.departure_time}
         </Typography>
       </CardContent>
-      <Tier seats={details?.seats} />
+      <Tier seats={details?.seats} details={details}/>
     </Card>
   );
 };
